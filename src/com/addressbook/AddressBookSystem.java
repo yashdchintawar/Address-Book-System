@@ -1,4 +1,5 @@
 package com.addressbook;
+
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Scanner;
@@ -85,6 +86,10 @@ class AddressBookData{
         this.eMail = eMail;
     }
 
+    public String geteMail() {
+        return eMail;
+    }
+
 }
 
 class Contacts{
@@ -140,8 +145,14 @@ class Contacts{
         System.out.println("Address Book Contacts :- ");
 
         for (AddressBookData i : ContactList){
-            System.out.print(i.getFirstName() + " ");
-            System.out.print(i.getLastName());
+            System.out.println("First Name Is " + i.getFirstName() + " ");
+            System.out.println("Last Name Is " + i.getLastName() + " ");
+            System.out.println("Address Is " + i.getAddress() + " ");
+            System.out.println("City Is " + i.getCity() + " ");
+            System.out.println("State Is " + i.getState() + " ");
+            System.out.println("Zip Code Is " + i.getZipcode() + " ");
+            System.out.println("Mobile Number Is " + i.getphoneNumber() + " ");
+            System.out.println("E-Mail Is " + i.geteMail() + " ");
         }
     }
 
