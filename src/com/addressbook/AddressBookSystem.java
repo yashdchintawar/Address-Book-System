@@ -16,7 +16,7 @@ public class AddressBookSystem {
     }
 }
 
-class AddressBookData{
+class AddressBookData {
     String firstName;
     String lastName;
     String address;
@@ -92,9 +92,9 @@ class AddressBookData{
 
 }
 
-class Contacts{
+class Contacts {
 
-    List <AddressBookData> ContactList = new ArrayList<AddressBookData>();
+    List<AddressBookData> ContactList = new ArrayList<AddressBookData>();
     Scanner in = new Scanner(System.in);
 
     public void addContacts() {
@@ -135,16 +135,16 @@ class Contacts{
         ContactList.add(addressBookContact); //added all inserted data into Array List
     }
 
-    public void showContacts(){
+    public void showContacts() {
 
-        if (ContactList.isEmpty()){
+        if (ContactList.isEmpty()) {
             System.out.println("Address Book Is Empty");
             return;
         }
 
         System.out.println("Address Book Contacts :- ");
 
-        for (AddressBookData i : ContactList){
+        for (AddressBookData i : ContactList) {
             System.out.println("First Name Is " + i.getFirstName() + " ");
             System.out.println("Last Name Is " + i.getLastName() + " ");
             System.out.println("Address Is " + i.getAddress() + " ");
@@ -156,7 +156,7 @@ class Contacts{
         }
     }
 
-    public void editContacts(){
+    public void editContacts() {
         System.out.println("If You Want To Edit Press yes ");
         String check = in.next();
 
@@ -206,12 +206,31 @@ class Contacts{
                 }
             }
 
-        }
-
-        else{
+        } else {
             System.out.println("Thank You, Now You Cannot Edit");
         }
 
+    }
+
+    public void deleteContacts() {
+
+        System.out.println("If You Want To Delete Press yes ");
+        String check = in.next();
+
+        if (check.equals("yes")) {
+
+            System.out.println("Enter First Name for deleting The Contact Information");
+            String firstNameCheck = in.next();
+
+            for (int i = 0; i < ContactList.size(); i++) {
+                if (ContactList.get(i).getFirstName().equals(firstNameCheck)) {
+                    ContactList.remove(ContactList.get(i));
+                    System.out.println("Contact Details Removed Successfully");
+                } else {
+                    System.out.println("Contact Details Not Found");
+                }
+            }
+        }
     }
 
 
