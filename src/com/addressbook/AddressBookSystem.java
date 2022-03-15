@@ -66,11 +66,11 @@ class AddressBookData{
         return state;
     }
 
-    public void setZipcode(int zipCode) {
+    public void setZipCode(int zipCode) {
         this.zipCode = zipCode;
     }
 
-    public int getZipcode() {
+    public int getZipCode() {
         return zipCode;
     }
 
@@ -122,7 +122,7 @@ class Contacts{
 
         System.out.println("Enter Postal Zip Code");
         int zipCode = in.nextInt();
-        addressBookContact.setZipcode(zipCode);
+        addressBookContact.setZipCode(zipCode);
 
         System.out.println("Enter Mobile Number");
         Long mobileNumber = in.nextLong();
@@ -150,10 +150,69 @@ class Contacts{
             System.out.println("Address Is " + i.getAddress() + " ");
             System.out.println("City Is " + i.getCity() + " ");
             System.out.println("State Is " + i.getState() + " ");
-            System.out.println("Zip Code Is " + i.getZipcode() + " ");
+            System.out.println("Zip Code Is " + i.getZipCode() + " ");
             System.out.println("Mobile Number Is " + i.getphoneNumber() + " ");
             System.out.println("E-Mail Is " + i.geteMail() + " ");
         }
     }
 
+    public void editContacts(){
+        System.out.println("If You Want To Edit Press yes ");
+        String check = in.next();
+
+        if (check.equals("yes")) {
+
+            System.out.println("Enter First Name For Editing AddressBook Contact");
+            String firstNameForCheck = in.next();
+
+            for (int i = 0; i < ContactList.size(); i++) {
+                if (ContactList.get(i).getFirstName().equals(firstNameForCheck)) {
+
+                    System.out.println("enter First Name!");
+                    String firstName = in.next();
+                    ContactList.get(i).setFirstName(firstName);
+
+                    System.out.println("enter Last Name!");
+                    String lastName = in.next();
+                    ContactList.get(i).setLastName(lastName);
+
+                    System.out.println("enter Address!");
+                    String address = in.next();
+                    ContactList.get(i).setAddress(address);
+
+                    System.out.println("enter City Name!");
+                    String city = in.next();
+                    ContactList.get(i).setCity(city);
+
+                    System.out.println("enter State Name!");
+                    String state = in.next();
+                    ContactList.get(i).setState(state);
+
+                    System.out.println("enter Post Zip Code!");
+                    int zip = in.nextInt();
+                    ContactList.get(i).setZipCode(zip);
+
+                    System.out.println("enter Mobile Number!");
+                    Long mobileNumber = in.nextLong();
+                    ContactList.get(i).setMobileNumber(mobileNumber);
+
+                    System.out.println("Enter Email Address!");
+                    String eMail = in.next();
+                    ContactList.get(i).seteMail(eMail);
+
+                    System.out.println("Edited Contact Is:- ");
+
+
+                }
+            }
+
+        }
+
+        else{
+            System.out.println("Thank You, Now You Cannot Edit");
+        }
+
     }
+
+
+}
