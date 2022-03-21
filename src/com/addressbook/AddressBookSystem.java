@@ -14,6 +14,7 @@ public class AddressBookSystem {
         contact1.showContacts();
         contact1.editContacts();
         contact1.deleteContacts();
+        // objects of contact
     }
 }
 
