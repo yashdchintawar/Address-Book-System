@@ -12,7 +12,8 @@ public class AddressBookSystem {
         Contacts contact1 = new Contacts();
         contact1.addContacts();
         contact1.showContacts();
-
+        contact1.editContacts();
+        contact1.deleteContacts();
     }
 }
 
