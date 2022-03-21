@@ -6,14 +6,33 @@ import java.util.Scanner;
 
 public class AddressBookSystem {
     public static void main(String[] args) {
+        Scanner in = new Scanner(System.in);
         System.out.println("Welcome To Address Book System Program");
 //        AddressBookData contact1 = new AddressBookData();
 
-        Contacts contact1 = new Contacts();
-        contact1.addContacts();
-        contact1.showContacts();
-        contact1.editContacts();
-        contact1.deleteContacts();
+        System.out.println("Enter The number Of Contact You Want To Add");
+        int numberOfContact = in.nextInt();
+
+        Contacts[] contact = new Contacts[numberOfContact];
+
+        for (int i = 0; i<numberOfContact; i++){
+            contact[i] = new Contacts();
+            contact[i].addContacts();
+            contact[i].editContacts();
+            contact[i].deleteContacts();
+        }
+
+        System.out.println("Contacts In Address Book!");
+        for (int i = 0; i<numberOfContact; i++){
+            contact[i].showContacts();
+        }
+
+
+
+//        contact1.addContacts();
+//        contact1.showContacts();
+//        contact1.editContacts();
+//        contact1.deleteContacts();
         // objects of contact
     }
 }
